@@ -167,7 +167,7 @@ async def post_data(
     db.refresh(application_data)
 
     # return JSONResponse({"data": data, "status": "success"}, status_code=200)
-    return templates.TemplateResponse("page.html", {"request": request, "data": data})
+    return templates.TemplateResponse("loan.html", {"request": request, "data": data})
 
 
 @app.get("/loan/application/list")
@@ -180,7 +180,7 @@ def get_client(
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
-    return templates.TemplateResponse("loan_home.html", {"request": request})
+    return templates.TemplateResponse("loan_application.html", {"request": request})
 
 
 if __name__ == "__main__":
