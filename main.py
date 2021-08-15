@@ -126,24 +126,10 @@ async def post_data(
     )
     pred_loan_status = prediction[0]
 
-    process_start_time = time.time()
-    time_stamp = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
     data = {
         "Name": name,
         "Email": email,
-        "Gender": gender,
-        "Married": married,
-        "Dependents": dependents,
-        "Education": education,
-        "Self_Employed": self_employed,
-        "ApplicantIncome": applicant_income,
-        "CoapplicantIncome": coapplicant_income,
         "LoanAmount": loan_amount,
-        "Loan_Amount_Term": loan_amount_term,
-        "Credit_History": credit_history,
-        "Property_Area": property_area,
-        "time_stamp": time_stamp,
-        "process_time": (time.time() - process_start_time),
         "Result": pred_loan_status,
     }
 
@@ -166,16 +152,7 @@ async def post_data(
     db.commit()
     db.refresh(application_data)
 
-    # return JSONResponse({"data": data, "status": "success"}, status_code=200)
     return templates.TemplateResponse("loan.html", {"request": request, "data": data})
-
-
-@app.get("/loan/application/list")
-def get_client(
-    db: Session = Depends(database.get_db),
-):
-    client = db.query(models.Loan).all()
-    return client
 
 
 @app.get("/", response_class=HTMLResponse)

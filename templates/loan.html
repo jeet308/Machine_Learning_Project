@@ -14,11 +14,11 @@
           {% if data.Result == 1 %}
           <h1 class="display-4">Congratulation!</h1>
           <p class="lead">
-            Your Loan Amount for {{data.LoanAmount}} is Successfully Approved.
+           Mr/ Msr {{data.Name}} Your Loan Amount for {{data.LoanAmount}} is Successfully Approved.
           </p>
           {% else %}
           <h1 class="display-4">Sorry!</h1>
-          <p class="lead">Your Loan Application is Rejected</p>
+          <p class="lead">Mr/ Msr {{data.Name}} Your Loan Application is Rejected</p>
           {% endif %}
           <hr class="my-4" />
           <p class="lead">
