@@ -1,0 +1,32 @@
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 120
+default_section = "THIRDPARTY"
+
+[tool.black]
+line-length = 120
+safe = true
+quiet = true
+target-version = ['py38']
+include = '\.pyi?$'
+exclude = '''
+/(
+# This list will be custom based on project files
+| .venv         # exclude a few common directories in the
+| .git          # root of the project
+| .idea
+| pyproject.toml
+| .ipynb_checkpoints
+| .DS_Store
+| .pytest_cache
+
+)/
+'''
+
+[tool.autopep8]
+max_line_length = 120
+ignore = "E501,W6"  # or ["E501", "W6"]
+in-place = true
+recursive = true
+aggressive = 3

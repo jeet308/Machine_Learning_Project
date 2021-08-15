@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <title>Loan Approval ML project</title>
+    <link href="{{url_for('static', path='/bootstrap.css')}}" rel="stylesheet" />
+  </head>
+  <body>
+    <section>
+      <div class="alert alert-dark text-center" role="alert">
+        Loan Approval Machine Learning Project
+      </div>
+      <div class="container">
+        <form action="/loan/application/form" method="post">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="name"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label>Email</label>
+              <input
+                type="text"
+                class="form-control"
+                name="email"
+                placeholder="Enter your email"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label>Gender</label>
+              <select id="gender" name="gender" class="form-control">
+                <option value="0" selected>Male</option>
+                <option value="1">Female</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Marriage Status</label>
+              <select id="married" name="married" class="form-control">
+                <option value="1" selected>Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Education</label>
+              <select id="education" name="education" class="form-control">
+                <option value="1" selected>Graduate</option>
+                <option value="0">Not Graduate</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Property Area</label>
+              <select id="property_area" name="property_area" class="form-control">
+                <option value="0" selected>Urban</option>
+                <option value="1">Rural</option>
+                <option value="2">Semiurban</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Applicant Income</label>
+              <input
+                type="number"
+                class="form-control"
+                name="applicant_income"
+                placeholder="Enter applicant income"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label>Coapplicant Income</label>
+              <input
+                type="number"
+                class="form-control"
+                name="coapplicant_income"
+                placeholder="Enter coapplicant income"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label>Loan Amount</label>
+              <input
+                type="number"
+                class="form-control"
+                name="loan_amount"
+                placeholder="Enter loan amount"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label>Loan Amount Term</label>
+              <input
+                type="number"
+                class="form-control"
+                name="loan_amount_term"
+                placeholder="Enter loan amount term"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label>Dependents</label>
+              <select id="dependents" name="dependents" class="form-control">
+                <option value="0" selected>0</option>
+                <option class="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label>Self Employed</label>
+              <select id="self_employed" name="self_employed" class="form-control">
+                <option value="1" selected>Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label>Credit History</label>
+              <select id="credit_history" name="credit_history" class="form-control">
+                <option value="1" selected>Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
